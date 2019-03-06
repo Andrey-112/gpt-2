@@ -6,6 +6,22 @@ For now, we have only released a smaller (117M parameter) version of GPT-2.
 
 See more details in our [blog post](https://blog.openai.com/better-language-models/).
 
+## Usage
+
+This repository is meant to be a starting point for researchers and engineers to experiment with GPT-2-117M.  While GPT-2-117M is less proficient than GPT-2-1.5B, it is useful for a wide range of research and applications which could also apply to larger models.
+
+### Some caveats
+
+- GPT-2-117M’s behavior is not well-understood and potentially not very robust.  The model should not be used as is in safety-critical applications or cases where reliability or accuracy is important (e.g. a suicide hotline).  Imagine worst-case behavior in taking care not to accidentally harm people.
+- The dataset our models were trained on contains many texts with [biases](https://twitter.com/TomerUllman/status/1101485289720242177) and factual inaccuracies, and thus the resulting models are likely to be biased and inaccurate as well.
+- To avoid having samples mistaken as human-written, we recommend clearly labeling samples as synthetic before wide dissemination.  The model is often incoherent or inaccurate in subtle ways, which takes more than a quick read for a human to notice.
+
+### Work with us
+
+Please [let us know](mailto:languagequestions@openai.com) if you’re doing interesting research with or working on applications of GPT-2-117M!  We’re especially interested in hearing from and potentially working with those who are studying
+- Potential malicious use cases and defenses against them (e.g. the detectability of synthetic text)
+- The extent of problematic content (e.g. bias) being baked into the models and effective mitigations
+
 ## Installation
 
 Git clone this repository, and `cd` into directory for remaining commands
@@ -53,7 +69,7 @@ and a valid install of [nvidia-docker 2.0](https://github.com/nvidia/nvidia-dock
 docker run --runtime=nvidia -it gpt-2 bash
 ```
 
-## Usage
+## Sampling scripts
 
 | WARNING: Samples are unfiltered and may contain offensive content. |
 | --- |
@@ -120,4 +136,4 @@ We are still considering release of the larger models.
 
 ## License
 
-MIT
+[MIT](./LICENSE)
